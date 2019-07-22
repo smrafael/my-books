@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBhP_Z7KX3I0xrVMRjcnFP_Q8DKM-8d9pk",
+  apiKey: "apiKey",
   authDomain: "my-books-34d9c.firebaseapp.com",
   databaseURL: "https://my-books-34d9c.firebaseio.com",
   projectId: "my-books-34d9c",
