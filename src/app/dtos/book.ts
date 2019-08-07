@@ -6,4 +6,7 @@ export class Book {
     rating: number;
     done: boolean;
 
+    constructor(init?: Partial<Book >) {
+        Object.assign(this, init);
+    }
 }

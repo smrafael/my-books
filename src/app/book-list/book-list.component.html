@@ -1,0 +1,39 @@
+<br />
+
+<div *ngIf="showDeleteMsg" class="alert alert-success" role="alert">
+    Book removed!
+</div>
+
+<div *ngIf="showDeleteMsgError" class="alert alert-danger" role="alert">
+    Error on remove!
+</div>
+
+<a routerLink="/books/create" class="btn btn-primary btn-lg" tabindex="-1" role="button">+ New</a>
+<br />
+<br />
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Read</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of books">
+            <td>{{ b.payload.doc.data().title }}</td>
+            <td>{{ b.payload.doc.data().author }}</td>
+            <td>{{ b.payload.doc.data().rating }}</td>
+            <td><fa-icon *ngIf="b.payload.doc.data().done" icon="check-circle"></fa-icon></td>
+            <td>
+                <button type="button" class="btn btn-link" routerLink="/books/{{b.payload.doc.id}}" style="padding: 0; margin-right: 1em">
+                    <fa-icon icon="edit"></fa-icon></button> 
+                <button type="button" class="btn btn-link" (click)="remove(b.payload.doc.id)" style="padding: 0; margin-right: 1em">
+                    <fa-icon icon="trash"></fa-icon></button> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
