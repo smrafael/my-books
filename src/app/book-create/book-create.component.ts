@@ -73,7 +73,7 @@ export class BookCreateComponent implements OnInit {
         this.btnSaveLbl = 'Saved';
         this.success = true;
         setTimeout(() => {
-          this.router.navigate(['']);
+          this.router.navigate(['/books']);
         }, 1500)
       })
       .catch(err => {
